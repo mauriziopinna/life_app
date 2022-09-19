@@ -1,0 +1,13 @@
+.tiles{
+    color: #317ed9;
+    border:solid;
+    border-color: rgb(165, 165, 165);
+    border-width: 2px;
+    box-shadow: 10px 10px 5px #dedede;
+    margin-left: 10px;
+    width: 200px;
+    height:200px;
+    border-radius: 5px; 
+    text-align: center;
+}
+
