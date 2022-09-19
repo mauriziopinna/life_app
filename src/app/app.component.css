@@ -1,0 +1,16 @@
+#logo-div{
+    margin-left: 15px;
+}
+
+.sticky {
+    position: fixed;
+    top: 50px;
+}
+
+#myHeader{
+    position: relative;
+}
+
+.top-nav-right{
+    float: right;
+}
