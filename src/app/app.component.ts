@@ -8,8 +8,8 @@ import { HostListener } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
- 
   title = 'life_app';
+  constructor(public router:Router){}
 
   isSticky: boolean = false;
 
@@ -18,4 +18,10 @@ export class AppComponent {
     console.log("hey there!");
     this.isSticky = window.pageYOffset >= 250;
   }
+
+  redirection(){
+    window.location.href="/login"
+  }
+
+
 }

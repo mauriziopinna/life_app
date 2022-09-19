@@ -1,0 +1,56 @@
+<!-- <main class="form-signin w-100 m-auto">
+    <form>
+      <h1 class="h3 mb-3 fw-normal">Please sign in</h1>
+      <h2 *ngIf="this.isPresent==false&&this.loginPressed==true" class="h3 mb-3 fw-normal">Utente non registrato. Clicca su registrati</h2>
+      <h2 *ngIf="this.passwordCorrect==false&&this.loginPressed==true&&this.isPresent==true" class="h3 mb-3 fw-normal">Password errata.</h2>
+      <div class="form-floating">
+        <input type="email"  [(ngModel)]="myUser.email" name="email" class="form-control" id="floatingInput" placeholder="name@example.com">
+        <label for="floatingInput">Username</label>
+      </div>
+      <div class="form-floating">
+        <input type="password" [(ngModel)]="myUser.password" name="password"class="form-control" id="floatingPassword" placeholder="Password">
+        <label for="floatingPassword">Password</label>
+      </div>
+  
+      <div class="checkbox mb-3">
+        <label>
+          <input type="checkbox" value="remember-me"> Remember me
+        </label>
+      </div>
+      <button (click)="verifyUser()" class="w-100 btn btn-lg btn-primary" type="submit">Sign in</button>
+    </form>
+</main> -->
+
+<div class="modal modal-signin position-static d-block bg-secondary py-5" tabindex="-1" role="dialog" id="modalSignin">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content rounded-4 shadow">
+        <div class="modal-header p-5 pb-4 border-bottom-0">
+          <!-- <h5 class="modal-title">Modal title</h5> -->
+          <h2 class="fw-bold mb-0">Effettua l'accesso</h2>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+  
+        <div class="modal-body p-5 pt-0">
+          <form class="">
+            <div class="form-floating mb-3">
+              <input type="email" [(ngModel)]="myUser.email" name="email" class="form-control rounded-3" id="floatingInput" placeholder="name@example.com">
+              <label for="floatingInput">Email address</label>
+            </div>
+            <div class="form-floating mb-3">
+              <input type="password" [(ngModel)]="myUser.password" name="password" class="form-control rounded-3" id="floatingPassword" placeholder="Password">
+              <label for="floatingPassword">Password</label>
+            </div>
+            <button class="w-100 mb-2 btn btn-lg rounded-3 btn-primary" type="submit" (click)="verifyUser()">Accedi</button>
+            <small class="text-muted access-denied" *ngIf="this.isPresent==false&&this.loginPressed==true">Utente non registrato. Clicca su registrati.</small>
+            <small class="text-muted access-denied" *ngIf="this.passwordCorrect==false&&this.loginPressed==true&&this.isPresent==true">Password errata</small>
+            <hr class="my-4">
+            <h2 class="fs-5 fw-bold mb-3">Oppure registrati</h2>
+            <button class="w-100 py-2 mb-2 btn btn-outline-primary rounded-3" type="submit">
+              <svg class="bi me-1" width="16" height="16"><use xlink:href="#facebook"></use></svg>
+              Registrati
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
