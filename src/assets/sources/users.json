@@ -1,0 +1,18 @@
+{    
+    "users":
+        [{
+            "email": "pincopallo",
+            "password" : "prova1",
+            "type":"user"
+        },
+        {
+            "email": "paperino",
+            "password" : "prova2",
+            "type":"user"
+        },
+        {
+            "email": "topolino",
+            "password" : "prova2",
+            "type":"admin"
+        }]
+}
