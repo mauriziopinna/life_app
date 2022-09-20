@@ -6,6 +6,7 @@ import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
 import { UserpageComponent } from './userpage/userpage.component';
 import { AdminpageComponent } from './adminpage/adminpage.component';
+import { RegistratiComponent } from './registrati/registrati.component';
  
 const routes: Routes = [
   {path:"", component:HomeComponent},
@@ -13,7 +14,8 @@ const routes: Routes = [
   {path: 'chisiamo', component: ChisiamoComponent},
   {path: 'prodottivita', component: ProdottivitaComponent},
   {path: 'login', component: LoginComponent},
-  {path: 'userpage', component: UserpageComponent}
+  {path: 'userpage', component: UserpageComponent},
+  {path: 'registrati', component:RegistratiComponent}
 ];
 
 @NgModule({
