@@ -10,6 +10,7 @@ import { LoginComponent } from './login/login.component';
 import { FormsModule } from '@angular/forms';
 import { UserpageComponent } from './userpage/userpage.component';
 import { AdminpageComponent } from './adminpage/adminpage.component';
+import { RegistratiComponent } from './registrati/registrati.component';
 
 @NgModule({
   declarations: [
@@ -20,6 +21,7 @@ import { AdminpageComponent } from './adminpage/adminpage.component';
     LoginComponent,
     UserpageComponent,
     AdminpageComponent,
+    RegistratiComponent,
   ],
   imports: [
     BrowserModule,

@@ -1,5 +1,5 @@
 <!-- <header id="myHeader" class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4 border-bottom"> -->
-<header id="myHeader" *ngIf="this.router.url !== '/login'" [ngClass]="{'d-flex flex-wrap align-items-center left-content-center left-content-md-between py-3 mb-4 border-bottom' : true, 'sticky' : isSticky}">
+<header id="myHeader" *ngIf="this.router.url !== '/login' && this.router.url !== '/registrati'" [ngClass]="{'d-flex flex-wrap align-items-center left-content-center left-content-md-between py-3 mb-4 border-bottom' : true, 'sticky' : isSticky}">
   <div id="logo-div">
     <img src="assets/sources/logo.svg" width="120" height="50" [routerLink]='["/chisiamo"]'>
   </div>
