@@ -1,0 +1,16 @@
+{
+        "fumatore":
+        [
+        "No, non ho mai fumato",
+        "No, ho smesso da più di due anni",
+        "No, ho smesso da meno di due anni",
+        "Si, fumo fino a 10 sigarette al giorno",
+        "Si, fumo da 11 a 30 sigarette al giorno",
+        "Si, fumo più di 30 sigarette al giorno"
+        ],
+        "capitale_assicurato":
+        [
+            
+        ]   
+    
+}
