@@ -1,0 +1,13 @@
+#carosello{ 
+    max-width: 90%;
+    margin-left: 5%;
+}
+
+.tiles{
+    padding: 2px;
+    box-sizing: border-box;
+}
+
+.tile_lefttt{
+    background-color: #317ED9;
+}
