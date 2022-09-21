@@ -11,6 +11,8 @@ import { FormsModule } from '@angular/forms';
 import { UserpageComponent } from './userpage/userpage.component';
 import { AdminpageComponent } from './adminpage/adminpage.component';
 import { RegistratiComponent } from './registrati/registrati.component';
+import { CalcoloPreventivoComponent } from './calcolo-preventivo/calcolo-preventivo.component';
+import { GestionepreventivoComponent } from './gestionepreventivo/gestionepreventivo.component';
 
 @NgModule({
   declarations: [
@@ -22,6 +24,8 @@ import { RegistratiComponent } from './registrati/registrati.component';
     UserpageComponent,
     AdminpageComponent,
     RegistratiComponent,
+    CalcoloPreventivoComponent,
+    GestionepreventivoComponent,
   ],
   imports: [
     BrowserModule,

@@ -11,7 +11,26 @@
             "address":"",
             "state":"",
             "region":"",
-            "zip":""            
+            "zip":"",
+            "preventivi":
+            {
+                "prev1":{
+                    "cod_prodotto":"001",
+                    "status":"pending",
+                    "fumatore":"5 anni",
+                    "premio":"200"
+                },
+                "prev2":{
+                    "cod_prodotto":"001",
+                    "status":"pending",
+                    "fumatore":"10_anni",
+                    "premio":"500"
+                },
+                "prev3":{
+
+                }
+            }   
+                                        
         },
         {
             "email": "paperino",

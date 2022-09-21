@@ -1,10 +1,29 @@
-<!-- <div style="text-align:center">
-    <h2>
-        Country list from local json file...
-    </h2>
-    <ul *ngFor="let item of userList">
-       <li>
-          <h3>Email :{{item.username}}, Password: {{item.password}}</h3>
-       </li>
-    </ul>
-</div> -->
+<h1 style="color:rgb(24, 94, 148); text-align: center;">I nostri prodotti vita</h1>
+<br>
+<br>
+<div class="card-group">
+    <div class="card">
+      <img class="card-img-top" src="assets/sources/pvita3.jpg" alt="Card image cap">
+      <div class="card-body">
+        <h5 class="card-title">Valore Vita Reale</h5>
+        <p class="card-text">{{prodottiList["Valore_Vita_Reale"]["descrizione"]}}</p>
+        <button type="button" class="btn btn-primary btn-sm">Calcola preventivo</button>
+      </div>
+    </div>
+    <div class="card">
+      <img class="card-img-top" src="assets/sources/pvita2.jpg" alt="Card image cap">
+      <div class="card-body">
+        <h5 class="card-title">Vita Famiglia</h5>
+        <p class="card-text">{{prodottiList["Vita_Famiglia"]["descrizione"]}}</p>
+        <button type="button" class="btn btn-primary btn-sm">Calcola preventivo</button>
+      </div>
+    </div>
+    <div class="card">
+      <img class="card-img-top" src="assets/sources/pvita1.jpg" alt="Card image cap">
+      <div class="card-body">
+        <h5 class="card-title">Realmente Amore</h5>
+        <p class="card-text">{{prodottiList["Realmente_Amore"]["descrizione"]}}</p>
+        <button type="button" class="btn btn-primary btn-sm">Calcola preventivo</button>
+      </div>
+    </div>
+  </div>

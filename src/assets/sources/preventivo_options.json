@@ -1,0 +1,60 @@
+{
+        "fumatore":
+        [
+        "No, non ho mai fumato",
+        "No, ho smesso da più di due anni",
+        "No, ho smesso da meno di due anni",
+        "Si, fumo fino a 10 sigarette al giorno",
+        "Si, fumo da 11 a 30 sigarette al giorno",
+        "Si, fumo più di 30 sigarette al giorno"
+        ],
+        "capitale_assicurato":
+        [
+            50000,
+            100000,
+            150000,
+            200000,
+            250000,
+            300000,
+            350000,
+            400000,
+            450000,
+            500000
+        ],
+        "durata_polizza":
+        [
+                "5 anni",
+                "10 anni",
+                "15 anni",
+                "20 anni",
+                "25 anni",
+                "30 anni"
+        ],
+        "titolo_studio":
+        [
+                "Nessuno",
+                "Licenza elementare",
+                "Licenza media inferiore",
+                "Diploma professionale",
+                "Diploma superiore",
+                "Diploma universitario/Laurea triennale",
+                "Laurea/Laurea Magistrale",
+                "Specializzazione post laurea"
+        ],
+        "professione":
+        [
+                "Libero professionista",
+                "Imprenditore",
+                "Quadro/Dirigente",
+                "Artigiano",
+                "Impiegato",
+                "Operaio",
+                "Pensionato",
+                "Casalinga",
+                "Non occupato/Studente"
+
+        ]
+        
+
+    
+}
