@@ -1,1 +1,21 @@
-<p>adminpage works!</p>
+<table class="table table-striped">
+    <thead>
+      <tr>
+        <th scope="col">Codice</th>
+        <th scope="col">Status</th>
+        <th scope="col">Email</th>
+        <th scope="col">Nome</th>
+        <th scope="col">Cognome</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let obj of matchList; let i = index">
+            <td>{{obj.code_polizza}}</td>
+            <td>{{obj.status}}</td>
+            <td>{{obj.email}}</td>
+            <td>{{obj.name}}</td>
+            <td>{{obj.surname}}</td>
+            <td><button type="button" class="btn btn-primary btn-sm">Apri polizza</button></td>
+        </tr>
+    </tbody>
+</table>
