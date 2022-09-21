@@ -218,7 +218,7 @@
 
       <div *ngIf="calcola_pressed==true" class="row row-cols-1 row-cols-md-2 mb-2 text-center">
         <div class="col">
-          <div id="firstCard" class="card mb-4 rounded-3 shadow-sm">
+          <div id="firstCard" class="card mb-4 rounded-3 shadow-sm" #firstCard>
             <div class="card-header py-3">
               <h4 class="my-0 fw-normal">CASO MORTE CAPITALE COSTANTE</h4>
             </div>
@@ -289,7 +289,7 @@
                   Per chi ha un mutuo e/o ha maggior bisogno di capitale i primi anni
                 </li>
               </ul>
-              <button type="button" (click)="selectPlan($event)"class="w-100 btn btn-lg btn-outline-primary">Seleziona</button>
+              <button type="button" (click)="selectPlan('prova')" class="w-100 btn btn-lg btn-outline-primary">Seleziona</button>
             </div>
           </div>
         </div>

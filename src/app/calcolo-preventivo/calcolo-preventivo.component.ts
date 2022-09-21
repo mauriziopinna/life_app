@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import preventivo_options from '/src/assets/sources/preventivo_options.json'
 @Component({
   selector: 'app-calcolo-preventivo',
@@ -12,8 +12,10 @@ export class CalcoloPreventivoComponent implements OnInit {
   public studio_list = preventivo_options["titolo_studio"];
   public professione_list = preventivo_options["professione"];
   public calcola_pressed:boolean=false;
-  
 
+  @ViewChild("firstCard")
+  firstCardRef!:ElementRef;
+  
   constructor() { }
 
   ngOnInit(): void {
@@ -25,12 +27,13 @@ export class CalcoloPreventivoComponent implements OnInit {
   }
 
   confermaApprova(){
-
     window.location.href="/prodottivita"
   }
 
-  selectPlan(event:Event){
-      
+  selectPlan(cardSelected:string){
+    if(cardSelected=="first"){
+      // this.firstCardRef.nativeElement.
+    }
   }
 
 }
