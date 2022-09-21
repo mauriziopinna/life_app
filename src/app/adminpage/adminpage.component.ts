@@ -8,8 +8,8 @@ import { Router } from '@angular/router';
   styleUrls: ['./adminpage.component.css']
 })
 export class AdminpageComponent implements OnInit {
-  public matchList:{code_polizza:string, status:string, email:string, name:string, surname:string}[] = matches;
-  ngOnInit(): void {
+  public matchList:{code_prodotto:string, code_polizza:string, status:string, email:string, name:string, surname:string}[] = matches;
+  ngOnInit(): void { 
   }
   constructor() { }
 }

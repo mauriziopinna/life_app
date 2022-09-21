@@ -8,7 +8,7 @@ import { UserpageComponent } from './userpage/userpage.component';
 import { AdminpageComponent } from './adminpage/adminpage.component';
 import { RegistratiComponent } from './registrati/registrati.component';
 import { CalcoloPreventivoComponent } from './calcolo-preventivo/calcolo-preventivo.component';
- 
+import { GestionepreventivoComponent } from './gestionepreventivo/gestionepreventivo.component';
 const routes: Routes = [
   {path:"", component:HomeComponent},
   {path: 'home', component:HomeComponent},
@@ -18,9 +18,9 @@ const routes: Routes = [
   {path: 'userpage', component: UserpageComponent},
   {path: 'registrati', component:RegistratiComponent},
   {path: 'calcolopreventivo', component:CalcoloPreventivoComponent},
-  {path: 'adminpage', component:AdminpageComponent}
+  {path: 'adminpage', component:AdminpageComponent},
+  {path: 'gestionepreventivo', component:GestionepreventivoComponent}
 ];
-
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
