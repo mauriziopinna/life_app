@@ -13,8 +13,8 @@
           <form class="needs-validation" novalidate="">
             <div class="row g-3">
                 <div class="col-md-6">
-                    <label for="validationServer04" class="form-label">State</label>
-                    <select class="form-select is-invalid" id="validationServer04" aria-describedby="validationServer04Feedback" required>
+                    <label for="validationServer04" class="form-label">Sei un fumatore?</label>
+                    <select  class="form-select is-invalid" id="validationServer04" aria-describedby="validationServer04Feedback" required>
                       <option selected disabled value="">Seleziona</option>
                       <option *ngFor="let item of smoke_list" [value]="item">{{item}}</option>
                     </select>
@@ -168,3 +168,4 @@
       </ul>
     </footer>
   </div>
+  
