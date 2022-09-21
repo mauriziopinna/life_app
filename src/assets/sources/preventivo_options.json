@@ -29,7 +29,32 @@
                 "20 anni",
                 "25 anni",
                 "30 anni"
+        ],
+        "titolo_studio":
+        [
+                "Nessuno",
+                "Licenza elementare",
+                "Licenza media inferiore",
+                "Diploma professionale",
+                "Diploma superiore",
+                "Diploma universitario/Laurea triennale",
+                "Laurea/Laurea Magistrale",
+                "Specializzazione post laurea"
+        ],
+        "professione":
+        [
+                "Libero professionista",
+                "Imprenditore",
+                "Quadro/Dirigente",
+                "Artigiano",
+                "Impiegato",
+                "Operaio",
+                "Pensionato",
+                "Casalinga",
+                "Non occupato/Studente"
+
         ]
+        
 
     
 }

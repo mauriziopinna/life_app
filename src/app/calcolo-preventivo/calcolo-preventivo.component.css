@@ -1,0 +1,50 @@
+.border_div{    
+    width: 50%;
+}
+
+.div_check{
+    margin-top: 35px;
+}
+
+.view_border{
+    border:solid;
+    color: black;
+    width: 2px;
+}
+
+.center_div{
+    border: solid;
+    color: black;
+    border-width: 2px;
+    margin-left: 60px;
+    margin-right: 60px;
+   
+}
+
+.question_div{
+    background-color: #F6F6F6;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+.hr_thick{
+    border-top: solid 2px black;
+}
+
+.hr_slim{
+    height: 1px;
+}
+
+.question_line_div{
+    display: flex;
+}
+
+.yes_no_div{
+    text-align: right;
+}
+
+.check_icon{
+    color: green;
+}

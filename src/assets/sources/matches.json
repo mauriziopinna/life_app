@@ -1,0 +1,34 @@
+[  
+    {
+        "code_prodotto": "001",
+        "code_polizza":"prev1",
+        "status": "approved",
+        "email":"pincopallo",
+        "name":"pinco",
+        "surname":"pallo"
+    },
+    {
+        "code_prodotto": "001",
+        "code_polizza": "prev2",
+        "status" : "rejected",
+        "email":"topolino",
+        "name":"topo",
+        "surname":"lino"
+    },
+    {
+        "code_prodotto": "002",
+        "code_polizza": "prev3",
+        "status" : "pending",
+        "email":"paperino",
+        "name":"pape",
+        "surname":"rino"
+    },
+    {
+        "code_prodotto": "001",
+        "code_polizza": "prev4",
+        "status" : "pending",
+        "email":"mario",
+        "name":"mario",
+        "surname":"rossi"
+    }
+]

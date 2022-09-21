@@ -1,0 +1,23 @@
+{  
+    "Valore_Vita_Reale":
+    {
+        "code_prodotto":"001",
+        "descrizione":"Per garantire un capitale e un tenore di vita inalterato ai tuoi cari, nell'eventualità della tua prematura scomparsa.",
+        "moltiplicatore":"4",
+        "erogazione":"unica transazione"
+    },
+    "Vita_Famiglia":
+    {
+        "code_prodotto":"002",
+        "descrizione":"La tua famiglia va protetta dai gravi eventi, quelli che cambiano la vita. Con la polizza Family Care tuteli la stabilità economica tua e dei tuoi cari, con lungimiranza.",
+        "moltiplicatore":"1,3",
+        "erogazione":"rateizzazione mensile distribuita su 5 anni"
+    },
+    "Realmente_Amore":
+    {
+        "code_prodotto":"003",
+        "descrizione":"La soluzione specifica per garantire un supporto economico nel momento in cui dovesse venire amancare uno o entrambi i genitori della persona non autosufficiente.",
+        "moltiplicatore":"1,6",
+        "erogazione":"rateizzazione mensile distribuita su 10 anni"
+    }
+}

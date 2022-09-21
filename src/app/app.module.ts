@@ -12,6 +12,7 @@ import { UserpageComponent } from './userpage/userpage.component';
 import { AdminpageComponent } from './adminpage/adminpage.component';
 import { RegistratiComponent } from './registrati/registrati.component';
 import { CalcoloPreventivoComponent } from './calcolo-preventivo/calcolo-preventivo.component';
+import { GestionepreventivoComponent } from './gestionepreventivo/gestionepreventivo.component';
 
 @NgModule({
   declarations: [
@@ -24,6 +25,7 @@ import { CalcoloPreventivoComponent } from './calcolo-preventivo/calcolo-prevent
     AdminpageComponent,
     RegistratiComponent,
     CalcoloPreventivoComponent,
+    GestionepreventivoComponent,
   ],
   imports: [
     BrowserModule,
