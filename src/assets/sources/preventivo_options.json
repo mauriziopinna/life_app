@@ -20,6 +20,16 @@
             400000,
             450000,
             500000
-        ]   
+        ],
+        "durata_polizza":
+        [
+                "5 anni",
+                "10 anni",
+                "15 anni",
+                "20 anni",
+                "25 anni",
+                "30 anni"
+        ]
+
     
 }
