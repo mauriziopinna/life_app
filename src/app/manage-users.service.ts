@@ -20,6 +20,27 @@ export class ManageUsersService {
     preventivi: any
   }[] = [];
 
+  private userLogged:User = new User(
+   "" //email
+  ,"" //password
+  ,"" //type
+  ,"" //name
+  ,"" //surname
+  ,"" //birthdate
+  ,"" //telephone
+  ,"" //address
+  ,"" //state
+  ,"" //region
+  ,"" //zip
+  ,"" //birth_place
+  ,"" //sesso
+  ,"" //codice_fiscale
+  ,"" //titolo_studio
+  ,"" //professione
+  ,0 //altezza
+  ,0 //peso
+  , []);
+
   constructor() {
   }
 
@@ -61,6 +82,10 @@ export class ManageUsersService {
       }        
     }
     return returnValue;
+  }
+
+  getUserLogged(){
+    return this.userLogged;
   }
 
   
