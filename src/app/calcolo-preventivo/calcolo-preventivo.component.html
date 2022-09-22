@@ -11,13 +11,14 @@
         
         <div class="col-md-7 col-lg-8">
           <h4 class="mb-3">Informazioni personali</h4>          
-            <form class="needs-validation" novalidate="">
+            <form class="needs-validation" novalidate="" #formPreventivo="ngForm">
             
               <div class="row g-3">
                   <div class="col-md-6">
                       <label for="validationServer04" class="form-label">Sei un fumatore?</label>
-                      <select  class="form-select is-invalid" id="validationServer04" aria-describedby="validationServer04Feedback" required>
-                        <option selected disabled value="">Seleziona</option>
+                      <select  class="form-select is-invalid" id="validationServer04" 
+                      [(ngModel)]="preventivoCompile.fumatore" name="fumatore" aria-describedby="validationServer04Feedback" required>
+                        <option selected disabled value="seleziona">Seleziona</option>
                         <option *ngFor="let item of smoke_list" [value]="item">{{item}}</option>
                       </select>
                       <div id="validationServer04Feedback" class="invalid-feedback">
@@ -28,11 +29,15 @@
               <div class="row g-3">
                 <div class="col-md-6">
                   <label for="validationServerUsername" class="form-label">Altezza</label>
-                  <div class="input-group has-validation">
+                  <div class="input-group has-validation">  
                     
-                    <input type="text" class="form-control is-invalid" id="validationServerUsername" aria-describedby="inputGroupPrepend3 validationServerUsernameFeedback" required>
+                    <input type="text" class="form-control" [ngClass]="{'is-invalid':altezza.errors?.['minlength']}" id="validationServerUsername" minlength="3" 
+                    [(ngModel)]="userLogged.altezza" id="altezza" name="altezza" #altezza="ngModel" aria-describedby="inputGroupPrepend3 validationServerUsernameFeedback" required>
                     <span class="input-group-text" id="inputGroupPrepend3">cm</span>
-                    <div id="validationServerUsernameFeedback" class="invalid-feedback">
+                    <div *ngIf=" altezza.errors?.['minlength']" id="validationServerUsernameFeedback" class="invalid-feedback">
+                      Campo obbligatorio.
+                    </div>
+                    <div *ngIf="altezza.dirty" id="validationServerUsernameFeedback" class="invalid-feedback">
                       Campo obbligatorio.
                     </div>
                   </div>
@@ -42,7 +47,8 @@
                   <label for="validationServerUsername" class="form-label">Quanto pesi?</label>
                   <div class="input-group has-validation">
                     
-                    <input type="text" class="form-control is-invalid" id="validationServerUsername" aria-describedby="inputGroupPrepend3 validationServerUsernameFeedback" required>
+                    <input type="text" class="form-control is-invalid" id="validationServerUsername" 
+                    [(ngModel)]="userLogged.peso" id="peso" name="peso" aria-describedby="inputGroupPrepend3 validationServerUsernameFeedback" required>
                     <span class="input-group-text" id="inputGroupPrepend3">kg</span>
                     <div id="validationServerUsernameFeedback" class="invalid-feedback">
                       Campo obbligatorio.
@@ -54,8 +60,9 @@
               <div class="row g-3">
                 <div class="col-md-6">
                   <label for="validationServer04" class="form-label">Capitale assicurato</label>
-                  <select  class="form-select is-invalid" id="validationServer04" aria-describedby="validationServer04Feedback" required>
-                    <option selected disabled value="">Seleziona</option>
+                  <select  class="form-select is-invalid" id="validationServer04" 
+                   [(ngModel)]="preventivoCompile.capitale" name="capitale" aria-describedby="validationServer04Feedback" required>
+                    <option selected disabled value=0>Seleziona</option>
                     <option *ngFor="let item of capitali_list" [value]="item">{{item}} €</option>
                   </select>
                   <div id="validationServer04Feedback" class="invalid-feedback">
@@ -64,8 +71,9 @@
                 </div>
                 <div class="col-md-6">
                   <label for="validationServer04" class="form-label">Durata polizza</label>
-                  <select  class="form-select is-invalid" id="validationServer04" aria-describedby="validationServer04Feedback" required>
-                    <option selected disabled value="">Seleziona</option>
+                  <select  class="form-select is-invalid" id="validationServer04" 
+                   [(ngModel)]="preventivoCompile.durata" name="durata" aria-describedby="validationServer04Feedback" required>
+                    <option selected disabled value=0>Seleziona</option>
                     <option *ngFor="let item of durata_list" [value]="item">{{item}}</option>
                   </select>
                   <div id="validationServer04Feedback" class="invalid-feedback">
@@ -73,25 +81,27 @@
                   </div>
                 </div>
               </div>
-            </form>          
-        </div>
-        <div class="col-md-7 col-lg-8">
-          <form class="needs-validation" novalidate="">
+            <!-- </form>           -->
+        <!-- </div> -->
+        <!-- <div class="col-md-7 col-lg-8">
+          <form class="needs-validation" novalidate=""> -->
             <hr class="my-4">
             <h4 class="mb-3">I tuoi dati anagrafici</h4>
             <div class="row g-3">
               <div class="col-md-6">
                 <label for="lastName" class="form-label">Data di nascita</label>
-                <input type="date" id="birthday" name="birthday" class="form-control" required>
+                <input type="date" id="birthday" 
+                [(ngModel)]="userLogged.birthdate" name="birthday" class="form-control" required>
                 <div class="invalid-feedback">
                   Valid last name is required.
                 </div>
               </div>
               <div class="col-md-6">
                 <label for="validationServer04" class="form-label">Comune di nascita</label>
-                <select  class="form-select is-invalid" id="validationServer04" aria-describedby="validationServer04Feedback" required>
+                <select  class="form-select is-invalid" id="validationServer04" 
+                [(ngModel)]="userLogged.birth_place" name="birth_place" aria-describedby="validationServer04Feedback" required>
                   <option selected disabled value="">Seleziona</option>
-                  <option *ngFor="let item of smoke_list" [value]="item">{{item}}</option>
+                  <option *ngFor="let item of comuni_list" [value]="item">{{item}}</option>
                 </select>
                 <div id="validationServer04Feedback" class="invalid-feedback">
                   Campo obbligatorio.
@@ -101,7 +111,8 @@
             <div class="row g-3">
               <div class="col-md-6">
                 <label for="validationServer04" class="form-label">Sesso</label>
-                <select  class="form-select is-invalid" id="validationServer04" aria-describedby="validationServer04Feedback" required>
+                <select  class="form-select is-invalid" id="validationServer04" 
+                [(ngModel)]="userLogged.sesso" name="sesso" aria-describedby="validationServer04Feedback" required>
                   <option selected disabled value="">Seleziona</option>
                   <option *ngFor="let item of ['Maschio','Femmina']" [value]="item">{{item}}</option>
                 </select>
@@ -112,7 +123,8 @@
               <div class="col-md-6">
                 <label for="validationServerUsername" class="form-label">Codice fiscale</label>
                 <div class="input-group has-validation"> 
-                  <input type="text" class="form-control is-invalid" id="validationServerUsername" aria-describedby="inputGroupPrepend3 validationServerUsernameFeedback" required>
+                  <input type="text" class="form-control is-invalid" id="validationServerUsername" 
+                  [(ngModel)]="userLogged.codice_fiscale" name="codice_fiscale" aria-describedby="inputGroupPrepend3 validationServerUsernameFeedback" required>
                   <div id="validationServerUsernameFeedback" class="invalid-feedback">
                     Campo obbligatorio.
                   </div>
@@ -123,7 +135,8 @@
             <div class="row g-3">
               <div class="col-md-6">
                 <label for="validationServer04" class="form-label">Titolo di studio</label>
-                <select  class="form-select is-invalid" id="validationServer04" aria-describedby="validationServer04Feedback" required>
+                <select  class="form-select is-invalid" id="validationServer04" 
+                [(ngModel)]="userLogged.titolo_studio" name="titolo_studio" aria-describedby="validationServer04Feedback" required>
                   <option selected disabled value="">Seleziona</option>
                   <option *ngFor="let item of studio_list" [value]="item">{{item}}</option>
                 </select>
@@ -133,7 +146,8 @@
               </div>
               <div class="col-md-6">
                 <label for="validationServer04" class="form-label">Professione</label>
-                <select  class="form-select is-invalid" id="validationServer04" aria-describedby="validationServer04Feedback" required>
+                <select  class="form-select is-invalid" id="validationServer04" 
+                [(ngModel)]="userLogged.professione" name="professione" aria-describedby="validationServer04Feedback" required>
                   <option selected disabled value="">Seleziona</option>
                   <option *ngFor="let item of professione_list" [value]="item">{{item}}</option>
                 </select>
@@ -151,29 +165,20 @@
           </div>
           <div class="center_div">
             <div class="question_line_div">
-              <p>La richiesta di essere classificato come cliente professional può essere fatta in presenza di almeno due dei seguenti requisiti:</p>
-              <div class="yes_no_div">
-                <div class="form-check form-check-inline">
-                  <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
-                  <label class="form-check-label" for="inlineRadio1">Si</label>
-                </div>
-                <div class="form-check form-check-inline">
-                  <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
-                  <label class="form-check-label" for="inlineRadio2">No</label>
-                </div>
-              </div>
-              
+              <p>La richiesta di essere classificato come cliente professional può essere fatta in presenza di almeno due dei seguenti requisiti:</p>              
             </div>
             <hr class="hr_thick">
             <div class="question_line_div">
               <p>Il valore del portafoglio di strumenti finanziari del Cliente, inclusi i depositi in contante, è superiore a 500.000,00 €.</p>
               <div class="yes_no_div">
                 <div class="form-check form-check-inline">
-                  <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
+                  <input class="form-check-input" type="radio" 
+                  [(ngModel)]="preventivoCompile.portafoglio_greater_500" name="greater_500" id="inlineRadio1" value=true>
                   <label class="form-check-label" for="inlineRadio1">Si</label>
                 </div>
                 <div class="form-check form-check-inline">
-                  <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+                  <input class="form-check-input" type="radio" 
+                  [(ngModel)]="preventivoCompile.portafoglio_greater_500" name="greater_500" id="inlineRadio2" value=false>
                   <label class="form-check-label" for="inlineRadio2">No</label>
                 </div>
               </div>
@@ -183,11 +188,13 @@
               <p>Il Cliente lavora o ha lavorato nel settore finanziario per almeno un anno in una posizione professionale che presupponga la conoscenza delle operazioni o dei servizi previsti.</p>
               <div class="yes_no_div">
                 <div class="form-check form-check-inline">
-                  <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
+                  <input class="form-check-input" type="radio" 
+                  [(ngModel)]="preventivoCompile.work_finance" name="work_finance" id="inlineRadio1" value=true>
                   <label class="form-check-label" for="inlineRadio1">Si</label>
                 </div>
                 <div class="form-check form-check-inline">
-                  <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+                  <input class="form-check-input" type="radio" 
+                  [(ngModel)]="preventivoCompile.work_finance" name="work_finance" id="inlineRadio2" value=false>
                   <label class="form-check-label" for="inlineRadio2">No</label>
                 </div>
               </div>
@@ -197,11 +204,13 @@
               <p>Ho in corso altre polizze assicurative vita (anche con altre compagnie):</p>
               <div class="yes_no_div">
                 <div class="form-check form-check-inline">
-                  <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
+                  <input class="form-check-input" type="radio" 
+                  [(ngModel)]="preventivoCompile.altre_polizze" name="altre_polizze" id="inlineRadio1" value=true>
                   <label class="form-check-label" for="inlineRadio1">Si</label>
                 </div>
                 <div class="form-check form-check-inline">
-                  <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+                  <input class="form-check-input" type="radio" 
+                  [(ngModel)]="preventivoCompile.altre_polizze" name="altre_polizze" id="inlineRadio2" value=false>
                   <label class="form-check-label" for="inlineRadio2">No</label>
                 </div>
               </div>
@@ -212,13 +221,16 @@
           </div> 
         </div>
         <hr class="my-4">
-        <button (click)="calcolaPreventivo()" class="w-100 btn btn-primary btn-lg" type="submit">Calcola preventivo</button>
+        <button  (click)="calcolaPreventivo()" [disabled]="!formPreventivo.form.valid" class="w-100 btn btn-primary btn-lg" type="submit">Calcola preventivo</button>
+        
       </div>
 
       <div *ngIf="calcola_pressed==true" class="row row-cols-1 row-cols-md-2 mb-2 text-center">
         <div class="col">
-          <div id="firstCard" class="card mb-4 rounded-3 shadow-sm" #firstCard>
-            <div class="card-header py-3">
+          <!-- <div class="card mb-4 rounded-3 shadow-sm">
+            <div class="card-header py-3"> -->
+          <div class="card mb-4 rounded-3" [ngClass]="{'shadow-sm border-primary':first_card_selected, 'shadow-sm':!first_card_selected}">
+            <div class="card-header py-3" [ngClass]="{'text-bg-primary border-primary':first_card_selected}">
               <h4 class="my-0 fw-normal">CASO MORTE CAPITALE COSTANTE</h4>
             </div>
             <div class="card-body">
@@ -249,15 +261,15 @@
                   Per chi ha un mutuo e oltre ripagare il mutuo vuole lasciare un capitale aggiuntivo ai familiari
                 </li>
               </ul>
-              <button type="button" class="w-100 btn btn-lg btn-outline-primary">Seleziona</button>
+              <button type="button" (click)="selectFirstCard()" class="w-100 btn btn-lg btn-outline-primary">Seleziona</button>
             </div>
           </div>
         </div>
         <div class="col">
-          <!-- <div class="card mb-4 rounded-3 shadow-sm border-primary">
-            <div class="card-header py-3 text-bg-primary border-primary"> -->
-          <div id="secondCard" class="card mb-4 rounded-3 shadow-sm">
-            <div class="card-header py-3">
+          <div class="card mb-4 rounded-3" [ngClass]="{'shadow-sm border-primary':second_card_selected, 'shadow-sm':!second_card_selected}">
+            <div class="card-header py-3" [ngClass]="{'text-bg-primary border-primary':second_card_selected}">
+          <!-- <div class="card mb-4 rounded-3 shadow-sm">
+            <div class="card-header py-3"> -->
               <h4 class="my-0 fw-normal">CASO MORTE CAPITALE DECRESCENTE</h4>
             </div>
             <div class="card-body">
@@ -288,7 +300,7 @@
                   Per chi ha un mutuo e/o ha maggior bisogno di capitale i primi anni
                 </li>
               </ul>
-              <button type="button" (click)="selectPlan('prova')" class="w-100 btn btn-lg btn-outline-primary">Seleziona</button>
+              <button type="button" (click)="selectSecondCard()" class="w-100 btn btn-lg btn-outline-primary">Seleziona</button>
             </div>
           </div>
         </div>

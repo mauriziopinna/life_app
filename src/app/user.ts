@@ -1,5 +1,4 @@
-import { StringMap } from "@angular/compiler/src/compiler_facade_interface";
-
+import { preventivo } from "./preventivo";
 export class User {
     constructor(
         public email: string,
@@ -12,6 +11,14 @@ export class User {
         public address:string,
         public state:string,
         public region:string,
-        public zip:string
+        public zip:string,
+        public birth_place:string,
+        public sesso:string,
+        public codice_fiscale:string,
+        public titolo_studio:string,
+        public professione:string,
+        public altezza:number,
+        public peso:number,
+        public preventivi:{preventivo:preventivo}[]
     ) {}
 }
