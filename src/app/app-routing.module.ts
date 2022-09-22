@@ -9,6 +9,7 @@ import { AdminpageComponent } from './adminpage/adminpage.component';
 import { RegistratiComponent } from './registrati/registrati.component';
 import { CalcoloPreventivoComponent } from './calcolo-preventivo/calcolo-preventivo.component';
 import { GestionepreventivoComponent } from './gestionepreventivo/gestionepreventivo.component';
+
 const routes: Routes = [
   {path:"", component:HomeComponent},
   {path: 'home', component:HomeComponent},
