@@ -17,6 +17,7 @@ export class ManageUsersService {
     state:string,
     region:string,
     zip:string  
+    preventivi: any
   }[] = [];
 
   constructor() {

@@ -4,33 +4,50 @@
             "email": "pincopallo",
             "password" : "prova1",
             "type":"user",
-            "name":"",
-            "surname":"",
-            "birthdate":"",
-            "telephone":"",
-            "address":"",
-            "state":"",
-            "region":"",
-            "zip":"",
+            "name":"pinco",
+            "surname":"pallo",
+            "birthdate":"10/05/1997",
+            "telephone":"123456789",
+            "address":"Via Pincopallo 1",
+            "state":"Italia",
+            "region":"Piemonte",
+            "zip":"10140",
+            "birth_place":"Torino",
+            "sesso":"uomo",
+            "codice_fiscale":"blablablablablabl",
+            "titolo_studio":"diploma",
+            "professione":"studente",
+            "altezza":180,
+            "peso":75,
             "preventivi":
             {
                 "prev1":{
                     "cod_prodotto":"001",
                     "status":"pending",
                     "fumatore":"5 anni",
-                    "premio":"200"
+                    "capitale":100000,
+                    "durata":10,
+                    "portafoglio_greater_500":true,                
+                    "work_finanance":true,
+                    "altre_polizze":true,
+                    "premio_capitale_cost":"200",
+                    "premio_cap_descr":"300"
                 },
                 "prev2":{
-                    "cod_prodotto":"001",
+                    "cod_prodotto":"020",
                     "status":"pending",
-                    "fumatore":"10_anni",
-                    "premio":"500"
+                    "fumatore":"5 anni",
+                    "capitale":100000,
+                    "durata":10,
+                    "portafoglio_greater_500":true,                
+                    "work_finanance":true,
+                    "altre_polizze":true,
+                    "premio_capitale_cost":"200",
+                    "premio_cap_descr":"300"
                 },
                 "prev3":{
-
                 }
             }   
-                                        
         },
         {
             "email": "paperino",

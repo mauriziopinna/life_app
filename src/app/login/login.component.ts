@@ -3,6 +3,7 @@ import users from '/src/assets/sources/users.json';
 import { User } from '../user';
 import { Router } from '@angular/router';
 import { ManageUsersService } from '../manage-users.service';
+
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -14,7 +15,7 @@ export class LoginComponent implements OnInit {
   passwordCorrect:boolean = false;
   loginPressed:boolean=false;
   constructor(private router:Router, private manageUserService:ManageUsersService) { 
-    this.myUser = new User("", "", "","","","","","","","","");
+    this.myUser = new User("", "", "","","","","","","","","","","","","","",0,0, []);
   }
   ngOnInit(): void {
     this.manageUserService.loadUsers();
@@ -43,7 +44,7 @@ export class LoginComponent implements OnInit {
     if(userCheck==2){
       this.isPresent=true;
       this.passwordCorrect=true;
-      this.router.navigate(['/userpage']);
+      this.router.navigate(['/userpage'], {queryParams: {email: this.myUser.email}});
     }
     else if(userCheck==1){
       this.isPresent=true;
