@@ -8,7 +8,7 @@ import { User } from '../user';
 })
 export class RegistratiComponent implements OnInit {
   // public formUser:User = new User("pincopallo","prova1","user");
-  public formUser:User = new User("", "", "","","","","","","","","");
+  public formUser:User = new User("", "", "","","","","","","","","","","","","","",0,0, []);
   public registrationSuccess = true;
   public signUpPressed = false;
   constructor(private manageUserService:ManageUsersService) { }

@@ -14,7 +14,7 @@ export class LoginComponent implements OnInit {
   passwordCorrect:boolean = false;
   loginPressed:boolean=false;
   constructor(private router:Router, private manageUserService:ManageUsersService) { 
-    this.myUser = new User("", "", "","","","","","","","","");
+    this.myUser = new User("", "", "","","","","","","","","","","","","","",0,0, []);
   }
   ngOnInit(): void {
     this.manageUserService.loadUsers();
