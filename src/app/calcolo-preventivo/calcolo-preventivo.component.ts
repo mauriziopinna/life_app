@@ -47,11 +47,26 @@ export class CalcoloPreventivoComponent implements OnInit {
     console.log("portafoglio > 500: " + this.preventivoCompile.portafoglio_greater_500);
     console.log("work finance " + this.preventivoCompile.work_finance);
     console.log("altre polizze" + this.preventivoCompile.altre_polizze);
-
+    this.preventivoCompile.premio_capitale_cost = 70;
+    this.preventivoCompile.premio_cap_descr = 15;
+    console.log(this.userLogged);
   }
 
   confermaApprova(){
     window.location.href="/userpage?email=pincopallo"
+    //let numberPrevs = this.userLogged.preventivi.length;
+    this.userLogged.preventivi.push(this.preventivoCompile);
+    localStorage.removeItem("userLogged");
+    localStorage.setItem("userLogged", JSON.stringify(this.userLogged));
+    let userListJSON = localStorage.getItem("users");
+    let userList = JSON.parse(userListJSON!);
+    for(var item in userList!){
+      if(userList[item].email==this.userLogged.email){
+        userList[item] = this.userLogged;
+      }        
+    }
+    localStorage.removeItem("users");
+    localStorage.setItem("users", JSON.stringify(userList));
   }
 
   selectFirstCard(){

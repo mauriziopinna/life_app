@@ -19,6 +19,9 @@ export class User {
         public professione:string,
         public altezza:number,
         public peso:number,
-        public preventivi:{preventivo:preventivo}[]
+        public preventivi: preventivo[]//dev'essere un dizionario di preventivi
+        //ovvero un dizionario delle coppie stringhe/preventivo
+
+
     ) {}
 }
