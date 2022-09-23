@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import users from '/src/assets/sources/users.json';
 import { User } from '../user';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { ManageUsersService } from '../manage-users.service';
 
 @Component({
@@ -14,37 +14,37 @@ export class LoginComponent implements OnInit {
   isPresent:boolean=false;
   passwordCorrect:boolean = false;
   loginPressed:boolean=false;
-  constructor(private router:Router, private manageUserService:ManageUsersService) { 
+  private previousPage:any;
+  constructor(
+    private router:Router, 
+    private manageUserService:ManageUsersService,
+    private route:ActivatedRoute
+    
+    ) { 
     this.myUser = new User("", "", "","","","","","","","","","","","","","",0,0, []);
   }
   ngOnInit(): void {
+    this.manageUserService.isUserLogged();
+    this.route.queryParams
+      .subscribe(params=>
+        this.previousPage=params)
     this.manageUserService.loadUsers();
   }
 
   verifyUser(){
-    // if(sessionStorage.getItem("users")==null)
-    //   console.log("é nullooooo");
-    // for(let item of this.userList){
-    //   if(item.email == this.myUser.email){
-    //     this.isPresent=true;
-    //     if(item.password==this.myUser.password)
-    //       this.passwordCorrect=true;
-    //     break;
-    //   }      
-    // }
-    // this.loginPressed=true;
-    // if(this.isPresent&&this.passwordCorrect){
-    //   this.router.navigate(['/userpage']);
-    // }
-
-
     let userCheck = this.manageUserService.checkUserLogin(this.myUser);
     console.log(userCheck);
     this.loginPressed=true;
     if(userCheck==2){
       this.isPresent=true;
       this.passwordCorrect=true;
-      this.router.navigate(['/userpage'], {queryParams: {email: this.myUser.email}});
+      if(this.previousPage['previous']=="vita"){
+        window.location.href="/calcolopreventivo";
+      }
+      else{
+        window.location.href="/userpage?email="+this.myUser.email;
+      }
+      
     }
     else if(userCheck==1){
       this.isPresent=true;
