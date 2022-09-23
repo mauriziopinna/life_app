@@ -22,7 +22,7 @@ export class CalcoloPreventivoComponent implements OnInit {
   public userLogged:User = this.manageUserService.getUserLogged();
   preventivoCompile:preventivo;
   constructor(private router:Router, private manageUserService:ManageUsersService) { 
-    this.preventivoCompile = new preventivo("seleziona1","seleziona2","seleziona",0,0,false,false,false,0,0);
+    this.preventivoCompile = new preventivo("seleziona0","seleziona1","seleziona2","seleziona",0,0,false,false,false,0,0);
   }
   
   

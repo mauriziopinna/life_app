@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import users from '/src/assets/sources/users.json';
 import { ActivatedRoute } from '@angular/router';
 import { User } from '../user';
+import { preventivo } from '../preventivo';
 
 
 @Component({
@@ -35,19 +36,22 @@ export class UserpageComponent implements OnInit {
   public userLogged = new User("", "", "","","","","","","","","","","","","","",0,0, []);
 
 
-  public preventivi:{cod_prodotto: string, status: string, fumatore: string, capitale: number, durata: number, portafoglio_greater_500: boolean, work_finance: boolean, altre_polizze:boolean, premio_capitale_cost:number, premio_cap_descri:number}[]=users.users.preventivi;
+  public preventivi:preventivo[]=users.users.preventivi;
 
   //public userEmail: any;
 
   constructor(private route: ActivatedRoute) { 
     let userLoggedJSON = localStorage.getItem("userLogged");
     this.userLogged = JSON.parse(userLoggedJSON!);
+    this.preventivi = this.userLogged.preventivi;
   }
 
   ngOnInit(): void {
     
     console.log("stampa da user page:" +this.userLogged);
     console.log("stampa da user page:" +this.userLogged.email);
+    console.log("stampa da user page:" +this.preventivi);
+    console.log("stampa da user page:" +this.preventivi[0].work_finance);
   }
 
 

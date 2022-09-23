@@ -1,5 +1,6 @@
 export class preventivo{
     constructor(
+        public cod_prev:string,
         public cod_prodotto:string,
         public status:string,
         public fumatore:string,

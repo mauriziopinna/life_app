@@ -1,8 +1,9 @@
 <div class="row" style="padding-top: 20px;">
+    
     <div class="col-lg-6 col-md-6 col-sm-12">
         <table class="table table-striped">
             <thead>
-
+                <h3 class="columns_userpage">Dati Utente</h3>
             </thead>
             <tbody>
                 <tr>
@@ -17,71 +18,188 @@
                         <p>{{this.userLogged.password}}</p>
                     </td>
                 </tr>
-                    <!-- <th scope="col">Tipo</th>
+                <tr>
+                    <th scope="col">Tipo</th>
                     <td>
-                        <p>{{userLogged[i].type}}</p>
+                        <p>{{this.userLogged.type}}</p>
                     </td>
+                </tr>
+                <tr>
                     <th scope="col">Nome</th>
                     <td>
-                        <p>{{userLogged[i].name}}</p>
+                        <p>{{this.userLogged.name}}</p>
                     </td>
+                </tr>
+                <tr>
                     <th scope="col">Cognome</th>
                     <td>
-                        <p>{{userLogged[i].surname}}</p>
+                        <p>{{this.userLogged.surname}}</p>
                     </td>
+                </tr>
                     <th scope="col">Sesso</th>
                     <td>
-                        <p>{{userLogged[i].sesso}}</p>
+                        <p>{{this.userLogged.sesso}}</p>
                     </td>
+                <tr>
                     <th scope="col">Data di nascita</th>
                     <td>
-                        <p>{{userLogged[i].birthdate}}</p>
+                        <p>{{this.userLogged.birthdate}}</p>
                     </td>
+                </tr>
+                <tr>
                     <th scope="col">Luogo di Nascita</th>
                     <td>
-                        <p>{{userLogged[i].birth_place}}</p>
+                        <p>{{this.userLogged.birth_place}}</p>
                     </td>
+                </tr>
+                <tr>
                     <th scope="col">Codice Fiscale</th>
                     <td>
-                        <p>{{userLogged[i].codice_fiscale}}</p>
+                        <p>{{this.userLogged.codice_fiscale}}</p>
                     </td>
+                </tr>
+                <tr>
                     <th scope="col">Telefono</th>
                     <td>
-                        <p>{{userLogged[i].telephone}}</p>
+                        <p>{{this.userLogged.telephone}}</p>
                     </td>
+                </tr>
+                <tr>
                     <th scope="col">Indirizzo</th>
                     <td>
-                        <p>{{userLogged[i].address}}</p>
+                        <p>{{this.userLogged.address}}</p>
                     </td>
+                </tr>
+                <tr>
                     <th scope="col">Codice Postale</th>
                     <td>
-                        <p>{{userLogged[i].zip}}</p>
+                        <p>{{this.userLogged.zip}}</p>
                     </td>
+                </tr>
+                <tr>
                     <th scope="col">Nazione</th>
                     <td>
-                        <p>{{userLogged[i].state}}</p>
+                        <p>{{this.userLogged.state}}</p>
                     </td>
+                </tr>
+                <tr>
                     <th scope="col">Regione</th>
                     <td>
-                        <p>{{userLogged[i].region}}</p>
+                        <p>{{this.userLogged.region}}</p>
                     </td>
+                </tr>
+                <tr>
                     <th scope="col">Titolo di studio</th>
                     <td>
-                        <p>{{userLogged[i].titolo_studio}}</p>
+                        <p>{{this.userLogged.titolo_studio}}</p>
                     </td>
+                </tr>
+                <tr>
                     <th scope="col">Professione</th>
                     <td>
-                        <p>{{userLogged[i].professione}}</p>
+                        <p>{{this.userLogged.professione}}</p>
                     </td>
+                </tr>
+                <tr>
                     <th scope="col">Altezza</th>
                     <td>
-                        <p>{{userLogged[i].altezza}}</p>
+                        <p>{{this.userLogged.altezza}}</p>
                     </td>
+                </tr>
+                <tr>
                     <th scope="col">Peso</th>
                     <td>
-                        <p>{{userLogged[i].peso}}</p>
+                        <p>{{this.userLogged.peso}}</p>
                     </td>
-                </tr> -->
+                </tr>
             </tbody>
-        </table>
+        </table> 
     </div>
+
+    <div div class="col-lg-6 col-md-6 col-sm-12">
+
+    <div *ngIf="this.preventivi!==null">
+        <!--Verifica che ci siano preventivi-->
+        <div *ngFor="let item of preventivi, let i=index">
+            <thead>
+                <h3 class="columns_userpage" style="margin-left: 120px">Preventivo {{i+1}}</h3>
+            </thead>
+            <table class="table table-striped">
+                <tbody>
+                    <tr>
+                        <th scope="col">Codice Preventivo</th>
+                        <td>
+                            <p>{{this.preventivi[i].cod_prev}}</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th scope="col">Codice Prodotto</th>
+                        <td>
+                            <p>{{this.preventivi[i].cod_prodotto}}</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th scope="col">Status</th>
+                        <td>
+                            <p>{{this.preventivi[i].status}}</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th scope="col">Fumatore</th>
+                        <td>
+                            <p>{{this.preventivi[i].fumatore}}</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th scope="col">Capitale</th>
+                        <td>
+                            <p>{{this.preventivi[i].capitale}}</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th scope="col">Durata</th>
+                        <td>
+                            <p>{{this.preventivi[i].durata}}</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th scope="col">Portafoglio maggiore 500k</th>
+                        <td>
+                            <p>{{this.preventivi[i].portafoglio_greater_500}}</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th scope="col">Lavoro finanza</th>
+                        <td>
+                            <p>{{this.preventivi[i].work_finance}}</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th scope="col">Altre polizze attive</th>
+                        <td>
+                            <p>{{this.preventivi[i].altre_polizze}}</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th scope="col">Premio Capitale Cost</th>
+                        <td>
+                            <p>{{this.preventivi[i].premio_capitale_cost}}</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th scope="col">Premio capitale desc</th>
+                        <td>
+                            <p>{{this.preventivi[i].premio_cap_descr}}</p>
+                        </td>
+                    </tr>
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    </div>
+</div>
+
+
+    

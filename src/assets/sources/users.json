@@ -29,7 +29,7 @@
                     "capitale":100000,
                     "durata":10,
                     "portafoglio_greater_500":true,                
-                    "work_finanance":true,
+                    "work_finance":true,
                     "altre_polizze":true,
                     "premio_capitale_cost":"200",
                     "premio_cap_descr":"300"
@@ -42,7 +42,7 @@
                     "capitale":100000,
                     "durata":10,
                     "portafoglio_greater_500":true,                
-                    "work_finanance":true,
+                    "work_finance":true,
                     "altre_polizze":true,
                     "premio_capitale_cost":"200",
                     "premio_cap_descr":"300"
