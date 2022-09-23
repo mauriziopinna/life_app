@@ -21,7 +21,6 @@ export class User {
         public peso:number,
         public preventivi: preventivo[]//dev'essere un dizionario di preventivi
         //ovvero un dizionario delle coppie stringhe/preventivo
-
-
     ) {}
+
 }

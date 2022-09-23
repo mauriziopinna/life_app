@@ -4,6 +4,7 @@ import { ManageUsersService } from '../manage-users.service';
 import { Router } from '@angular/router';
 import { User } from '../user';
 import { preventivo } from '../preventivo';
+import { Match } from '../match';
 @Component({
   selector: 'app-calcolo-preventivo',
   templateUrl: './calcolo-preventivo.component.html',
@@ -22,7 +23,7 @@ export class CalcoloPreventivoComponent implements OnInit {
   public userLogged:User = this.manageUserService.getUserLogged();
   preventivoCompile:preventivo;
   constructor(private router:Router, private manageUserService:ManageUsersService) { 
-    this.preventivoCompile = new preventivo("seleziona1","seleziona2","seleziona",0,0,false,false,false,0,0);
+    this.preventivoCompile = new preventivo("selezioan0","seleziona1","pending","seleziona",0,0,false,false,false,0,0);
   }
   
   
@@ -55,6 +56,8 @@ export class CalcoloPreventivoComponent implements OnInit {
   confermaApprova(){
     window.location.href="/userpage?email=pincopallo"
     //let numberPrevs = this.userLogged.preventivi.length;
+    let last_prev = this.userLogged.preventivi.length;
+    this.preventivoCompile.cod_prev = "prev"+(last_prev+1).toString();
     this.userLogged.preventivi.push(this.preventivoCompile);
     localStorage.removeItem("userLogged");
     localStorage.setItem("userLogged", JSON.stringify(this.userLogged));
@@ -67,6 +70,21 @@ export class CalcoloPreventivoComponent implements OnInit {
     }
     localStorage.removeItem("users");
     localStorage.setItem("users", JSON.stringify(userList));
+    let matches = JSON.parse(localStorage.getItem("matches")!);
+
+    let newMatch = new Match(
+      "001", //codice prodotto provvisoriamente hard coded. poi dovra cambiare in base alla card che premiamo, passando da get
+      this.preventivoCompile.cod_prev,
+      this.preventivoCompile.status,
+      this.userLogged.email,
+      this.userLogged.name,
+      this.userLogged.surname
+    )
+
+    matches.push(newMatch);
+    localStorage.removeItem("matches");
+    localStorage.setItem("matches", JSON.stringify(matches));
+
   }
 
   selectFirstCard(){

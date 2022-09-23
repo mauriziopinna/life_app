@@ -35,15 +35,20 @@ export class LoginComponent implements OnInit {
     let userCheck = this.manageUserService.checkUserLogin(this.myUser);
     console.log(userCheck);
     this.loginPressed=true;
-    if(userCheck==2){
+    if(userCheck>=2){
       this.isPresent=true;
       this.passwordCorrect=true;
-      if(this.previousPage['previous']=="vita"){
-        window.location.href="/calcolopreventivo";
+      if(userCheck==3){ //sono un admin
+        window.location.href="/adminpage";
       }
       else{
-        window.location.href="/userpage?email="+this.myUser.email;
-      }
+        if(this.previousPage['previous']=="vita"){
+          window.location.href="/calcolopreventivo";
+        }
+        else{
+          window.location.href="/userpage?email="+this.myUser.email;
+        }
+      }      
       
     }
     else if(userCheck==1){
