@@ -29,36 +29,27 @@ export class UserpageComponent implements OnInit {
     titolo_studio: string, 
     professione: string, 
     altezza: number, peso: number, 
-    preventivi: any} [] = users.users;
-
-    userEmailFound = new User("", "", "","","","","","","","","","","","","","",0,0, []);
+    preventivi: any
+  } [] = users.users;
+    
+  public userLogged = new User("", "", "","","","","","","","","","","","","","",0,0, []);
 
 
   public preventivi:{cod_prodotto: string, status: string, fumatore: string, capitale: number, durata: number, portafoglio_greater_500: boolean, work_finance: boolean, altre_polizze:boolean, premio_capitale_cost:number, premio_cap_descri:number}[]=users.users.preventivi;
 
-  public userEmail: any;
+  //public userEmail: any;
 
-  constructor(private route: ActivatedRoute) { }
+  constructor(private route: ActivatedRoute) { 
+    let userLoggedJSON = localStorage.getItem("userLogged");
+    this.userLogged = JSON.parse(userLoggedJSON!);
+  }
 
   ngOnInit(): void {
-    this.route.queryParams  /* Passaggio parametri ricevuti da URL di routingLink */
-    .subscribe(params => {
-      this.userEmail = params;
-    }
-  );
+    
+    console.log("stampa da user page:" +this.userLogged);
+    console.log("stampa da user page:" +this.userLogged.email);
   }
 
-  // CheckEmailfromURL(){
-  //   for(let item of this.userList){
-  //     if(item.email==this.userEmail)
-  //     {
-  //       console.log(item);
-  //       this.userEmailFound=item;
-  //     }
-  //     else 
-  //     {
-  //       console.log("Utente non registrato");
-  //     }
-  //   }
 
-  }
+
+}

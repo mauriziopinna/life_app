@@ -1,5 +1,6 @@
 import { useAnimation } from '@angular/animations';
 import { Injectable } from '@angular/core';
+import { preventivo } from './preventivo';
 import { User } from './user';
 import users from '/src/assets/sources/users.json';
 @Injectable({
@@ -27,7 +28,6 @@ export class ManageUsersService {
     peso:number,
     preventivi: any
   }[] = [];
-
   private userLogged:User = new User(
    "" //email
   ,"" //password
@@ -66,14 +66,7 @@ export class ManageUsersService {
       let userListJSON = localStorage.getItem("users");
       this.userList = JSON.parse(userListJSON!);
     }
-
-    // if(this.userList.length===0){
-    //   let storage_users = localStorage.getItem("users");
-    //   if(storage_users!=null)
-    //     this.userList = JSON.parse(storage_users);
-    //   else
-    //     this.userList = users.users; 
-    // }   
+  
     return this.userList;      
   }
 

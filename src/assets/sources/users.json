@@ -20,8 +20,9 @@
             "altezza":180,
             "peso":75,
             "preventivi":
-            {
-                "prev1":{
+            [
+                {
+                    "cod_prev":"prev1",
                     "cod_prodotto":"001",
                     "status":"pending",
                     "fumatore":"5 anni",
@@ -33,36 +34,19 @@
                     "premio_capitale_cost":"200",
                     "premio_cap_descr":"300"
                 },
-                "prev2":{
-                },
-                "prev3":{
-                }
-            }   
-        },
-        {
-            "email": "paperino",
-            "password" : "prova2",
-            "type":"user",
-            "name":"",
-            "surname":"",
-            "birthdate":"",
-            "telephone":"",
-            "address":"",
-            "state":"",
-            "region":"",
-            "zip":""
-        },
-        {
-            "email": "topolino",
-            "password" : "prova2",
-            "type":"admin",
-            "name":"",
-            "surname":"",
-            "birthdate":"",
-            "telephone":"",
-            "address":"",
-            "state":"",
-            "region":"",
-            "zip":""
+                {
+                    "cod_prev":"prev2",
+                    "cod_prodotto":"001",
+                    "status":"pending",
+                    "fumatore":"5 anni",
+                    "capitale":100000,
+                    "durata":10,
+                    "portafoglio_greater_500":true,                
+                    "work_finanance":true,
+                    "altre_polizze":true,
+                    "premio_capitale_cost":"200",
+                    "premio_cap_descr":"300"
+                }                
+            ]   
         }]
 }
