@@ -1,22 +1,29 @@
-<!-- <header id="myHeader" class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4 border-bottom"> -->
-<header id="myHeader" *ngIf="this.router.url !== '/login' && this.router.url !== '/registrati'" [ngClass]="{'d-flex flex-wrap align-items-center left-content-center left-content-md-between py-3 mb-4 border-bottom' : true, 'sticky' : isSticky}">
-  <div id="logo-div">
-    <img src="assets/sources/logo.svg" width="120" height="50" [routerLink]='["/chisiamo"]'>
-  </div>
-  
-  <div class="my_margin_left">
-    <ul class="nav col-12 col-md-auto mb-2 justify-content-left mb-md-0">
-      <li><a [routerLink]='["/chisiamo"]' class="nav-link px-2 link-dark">Chi siamo</a></li>
-      <li><a [routerLink]='["/prodottivita"]' class="nav-link px-2 link-dark">Prodotti vita</a></li>
-    </ul>
-  </div> 
-  
+<div *ngIf="this.router.url !== '/login' && this.router.url !== '/registrati' && this.router.url !== '/login?previous=vita'" [ngClass]="{'d-flex flex-wrap align-items-center left-content-center left-content-md-between py-3 mb-4 border-bottom' : true, 'sticky' : isSticky}">
+<nav class="navbar navbar-expand-md fixed-top navbar-light bg-light" >
+  <div class="container-fluid">
+      <a class="navbar-brand">
+        <img src="assets/sources/logo.svg" width="120" height="50" [routerLink]='["/chisiamo"]'>
+      </a>
 
-  <div class="col-md-3 text-end">
-    <button type="button" *ngIf="!isLogged" (click)="redirection()" class="btn btn-outline-primary me-2">Login</button>
-    <button type="button" *ngIf="isLogged" (click)="logOutUser()" class="btn btn-outline-primary me-2">Logout</button>
+      <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+          <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarCollapse">
+          <div class="navbar-nav">
+              <ul class="nav col-12 col-md-auto mb-2 justify-content-left mb-md-0">
+                <li><a [routerLink]='["/chisiamo"]' class="nav-link px-2 link-dark">Chi siamo</a></li>
+                <li><a [routerLink]='["/prodottivita"]' class="nav-link px-2 link-dark">Prodotti vita</a></li>
+              </ul>
+          </div>
+          <div class="navbar-nav ms-auto">
+            <button type="button" *ngIf="!isLogged" (click)="redirection()" class="btn btn-outline-primary me-2">Login</button>
+            <button type="button" *ngIf="isLogged" (click)="logOutUser()" class="btn btn-outline-primary me-2">Logout</button>
+          </div>
+      </div>
   </div>
-</header>
+</nav>
+</div>
 
 
 

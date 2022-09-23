@@ -1,10 +1,11 @@
+<div style="padding-top: 20px;">
 <div class="container">
     <main>
       <div class="py-5 text-center">
-        <img class="d-block mx-auto mb-4" src="assets/sources/logo.svg" alt="" width="120" height="57">
-        <h2>Calcolo preventivo</h2>
+        <h1 style="color:rgb(24, 94, 148); text-align: center;">Calcolo preventivo</h1>
         <p class="lead" *ngIf="!calcola_pressed">Compila ancora pochi dati per aiutarci a calcolare il tuo preventivo</p>
         <p class="lead" *ngIf="calcola_pressed">Seleziona quale tipo di polizza è meglio per te</p>
+        <img src="assets/sources/calcolapreventivo.jpg" alt="" width="600" height="400">
       </div>
   
       <div class="row g-5" *ngIf="!calcola_pressed">
@@ -310,4 +311,4 @@
     </main>
   
   </div>
-  
+</div>

@@ -19,11 +19,6 @@ export class AppComponent {
 
   isSticky: boolean = false;
 
-  @HostListener('window:scroll', ['$event'])
-  checkScroll() {
-    console.log("hey there!");
-    this.isSticky = window.pageYOffset >= 250;
-  }
 
   redirection(){
     window.location.href="/login"

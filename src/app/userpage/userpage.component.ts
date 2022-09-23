@@ -48,19 +48,17 @@ export class UserpageComponent implements OnInit {
   );
   }
 
-  CheckEmailfromURL(){
-    for(let item of this.userList){
-      if(item.email==this.userEmail)
-      {
-        console.log(item);
-        this.userEmailFound=item;
-      }
-      else 
-      {
-        console.log("Utente non registrato");
-      }
-    }
+  // CheckEmailfromURL(){
+  //   for(let item of this.userList){
+  //     if(item.email==this.userEmail)
+  //     {
+  //       console.log(item);
+  //       this.userEmailFound=item;
+  //     }
+  //     else 
+  //     {
+  //       console.log("Utente non registrato");
+  //     }
+  //   }
 
   }
-
-}
