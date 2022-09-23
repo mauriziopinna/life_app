@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { ChisiamoComponent } from './chisiamo/chisiamo.component';
 import { HostListener } from '@angular/core';
+import { ManageUsersService } from './manage-users.service';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -9,7 +10,12 @@ import { HostListener } from '@angular/core';
 })
 export class AppComponent {
   title = 'life_app';
-  constructor(public router:Router){}
+  constructor(public router:Router, private manageUserService:ManageUsersService){}
+  // public isLogged:boolean = this.manageUserService.isLogged; 
+  public isLogged:boolean = localStorage.getItem("userLogged")!=null;
+  ngOnInit(): void{
+    this.isLogged = this.manageUserService.isUserLogged();
+  }
 
   isSticky: boolean = false;
 
@@ -21,6 +27,11 @@ export class AppComponent {
 
   redirection(){
     window.location.href="/login"
+  }
+
+  logOutUser(){
+    this.manageUserService.logOutUserService();
+    window.location.href="/home";
   }
 
 

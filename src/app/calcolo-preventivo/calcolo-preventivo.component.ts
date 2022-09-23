@@ -51,7 +51,7 @@ export class CalcoloPreventivoComponent implements OnInit {
   }
 
   confermaApprova(){
-    window.location.href="/prodottivita"
+    window.location.href="/userpage?email=pincopallo"
   }
 
   selectFirstCard(){

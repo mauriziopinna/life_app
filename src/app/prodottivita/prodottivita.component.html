@@ -7,7 +7,7 @@
       <div class="card-body">
         <h5 class="card-title">Valore Vita Reale</h5>
         <p class="card-text">{{prodottiList["Valore_Vita_Reale"]["descrizione"]}}</p>
-        <button type="button" class="btn btn-primary btn-sm">Calcola preventivo</button>
+        <button type="button" (click)="calcolaPreventivo()" class="btn btn-primary btn-sm">Calcola preventivo</button>
       </div>
     </div>
     <div class="card">
@@ -15,7 +15,7 @@
       <div class="card-body">
         <h5 class="card-title">Vita Famiglia</h5>
         <p class="card-text">{{prodottiList["Vita_Famiglia"]["descrizione"]}}</p>
-        <button type="button" class="btn btn-primary btn-sm">Calcola preventivo</button>
+        <button type="button" (click)="calcolaPreventivo()" class="btn btn-primary btn-sm">Calcola preventivo</button>
       </div>
     </div>
     <div class="card">
@@ -23,7 +23,7 @@
       <div class="card-body">
         <h5 class="card-title">Realmente Amore</h5>
         <p class="card-text">{{prodottiList["Realmente_Amore"]["descrizione"]}}</p>
-        <button type="button" class="btn btn-primary btn-sm">Calcola preventivo</button>
+        <button type="button" (click)="calcolaPreventivo()" class="btn btn-primary btn-sm">Calcola preventivo</button>
       </div>
     </div>
   </div>
