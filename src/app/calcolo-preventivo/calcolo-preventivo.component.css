@@ -47,3 +47,7 @@
 .check_icon{
     color: green;
 }
+
+.button_small{
+    width: 50px;
+}
