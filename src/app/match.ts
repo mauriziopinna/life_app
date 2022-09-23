@@ -1,6 +1,7 @@
 export class Match {
     constructor(
-        public code_polizza: string,
+        public cod_prodotto:string,
+        public cod_prev: string,
         public status: string,
         public email:string,
         public name:string,

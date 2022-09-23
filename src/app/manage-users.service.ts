@@ -3,6 +3,8 @@ import { Injectable } from '@angular/core';
 import { preventivo } from './preventivo';
 import { User } from './user';
 import users from '/src/assets/sources/users.json';
+import matches from '/src/assets/sources/matches.json';
+
 @Injectable({
   providedIn: 'root'
 })
@@ -66,6 +68,9 @@ export class ManageUsersService {
       let userListJSON = localStorage.getItem("users");
       this.userList = JSON.parse(userListJSON!);
     }
+    if(localStorage.getItem("matches")==null){
+      localStorage.setItem("matches", JSON.stringify(matches));
+    }
   
     return this.userList;      
   }
@@ -94,6 +99,9 @@ export class ManageUsersService {
       }        
       if(user_to_check.password===item.password){
         returnValue = returnValue+1;
+        if(item.type==="admin"){
+          returnValue = returnValue+1;
+        }
         localStorage.removeItem("userLogged");
         localStorage.setItem("userLogged", JSON.stringify(item));
         this.userLogged=item;

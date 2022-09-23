@@ -1,11 +1,11 @@
 {    
     "users":
         [{
-            "email": "pincopallo",
+            "email": "mario.rossi@gmail.com",
             "password" : "prova1",
             "type":"user",
-            "name":"",
-            "surname":"",
+            "name":"Mario",
+            "surname":"Rossi",
             "birthdate":"",
             "telephone":"",
             "address":"",
@@ -48,5 +48,11 @@
                     "premio_cap_descr":"300"
                 }                
             ]   
-        }]
+        },
+        {
+            "email": "operatore@admin.realemutua.it",
+            "password" : "admin1",
+            "type":"admin"
+        }
+        ]
 }

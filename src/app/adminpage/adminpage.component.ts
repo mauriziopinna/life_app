@@ -8,8 +8,12 @@ import { Router } from '@angular/router';
   styleUrls: ['./adminpage.component.css']
 })
 export class AdminpageComponent implements OnInit {
-  public matchList:{code_prodotto:string, code_polizza:string, status:string, email:string, name:string, surname:string}[] = matches;
+  public matchList:{cod_prodotto:string, cod_prev:string, status:string, email:string, name:string, surname:string}[];
   ngOnInit(): void { 
+    this.matchList = JSON.parse(localStorage.getItem("matches")!);
   }
-  constructor() { }
+  constructor() {
+    this.matchList = JSON.parse(localStorage.getItem("matches")!);
+  }
+
 }
