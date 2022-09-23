@@ -2,55 +2,55 @@
     <tbody> <!-- ciao sono matteo -->
         <tr>
             <th scope="col">Nome</th>
-            <td> <p>{{codice["name"]}}</p> </td>
+            <td> <p>{{this.userDisplay.name}}</p> </td>
         </tr>
         <tr>
             <th scope="col">Cognome</th>
-            <td> <p>{{codice["surname"]}}</p> </td>
+            <td> <p>{{this.userDisplay.surname}}</p> </td>
         </tr>
         <tr>
             <th scope="col">Data di nascita</th>
-            <td> <!--passare da preventivo--> </td>
+            <td>{{this.userDisplay.birthdate}}</td>
         </tr>
         <tr>
             <th scope="col">Comune di nascita</th>
-            <td> <!--passare da preventivo--> </td>
+            <td>{{this.userDisplay.birth_place}}</td>
         </tr>
         <tr>
             <th scope="col">Sesso</th>
-            <td> <!--passare da preventivo--> </td>
+            <td>{{this.userDisplay.sesso}}</td>
         </tr>
         <tr>
             <th scope="col">Codice Fiscale</th>
-            <td> <!--passare da preventivo--> </td>
+            <td>{{this.userDisplay.codice_fiscale}} </td>
         </tr>
         <tr>
             <th scope="col">Titolo di studio</th>
-            <td> <!--passare da preventivo--> </td>
+            <td>{{this.userDisplay.titolo_studio}}</td>
         </tr>
         <tr>
             <th scope="col">Professione</th>
-            <td> <!--passare da preventivo--> </td>
+            <td>{{this.userDisplay.professione}} </td>
         </tr>
         <tr>
             <th scope="col">Email</th>
-            <td> <!--passare da matches--> </td>
+            <td>{{this.userDisplay.email}}</td>
         </tr>
         <tr>
             <th scope="col">Cellulare</th>
-            <td> <!--passare da preventivo--> </td>
+            <td>{{this.userDisplay.telephone}}</td>
         </tr>
         <tr>
             <th scope="col">Fumatore</th>
-            <td> <!--passare da preventivo--> </td>
+            <td>{{this.preventivoDisplay.fumatore}}</td>
         </tr>
         <tr>
             <th scope="col">Altezza</th>
-            <td> <!--passare da preventivo--> </td>
+            <td> {{this.userDisplay.altezza}} </td>
         </tr>
         <tr>
             <th scope="col">Peso</th>
-            <td> <!--passare da preventivo--> </td>
+            <td> {{this.userDisplay.peso}} </td>
         </tr>
         <tr>
             <th scope="col">Codice Prodotto</th>
@@ -58,15 +58,15 @@
         </tr>
         <tr>
             <th scope="col">Codice Polizza</th>
-            <td> <p>{{codice["codice_polizza"]}}</p> </td>
+            <td> <p>{{codice["cod_prev"]}}</p> </td>
         </tr>
         <tr>
             <th scope="col">Capitale assicurato</th>
-            <td> <!--passare da preventivo--> </td>
+            <td>{{this.preventivoDisplay.capitale}}</td>
         </tr>
         <tr>
             <th scope="col">Durata Polizza</th>
-            <td> <!--passare da preventivo--> </td>
+            <td>{{this.preventivoDisplay.durata}} </td>
         </tr>
         <tr>
             <th scope="col">Mensilità dovuta</th>
@@ -74,7 +74,11 @@
         </tr>
         <tr>
             <th scope="col">Satus</th>
-            <td> <p>{{codice["status"]}}</p> </td>
+            <td> <p>{{this.preventivoDisplay.status}}</p> </td>
         </tr>
     </tbody>
   </table>
+<div *ngIf="this.preventivoDisplay.status=='pending'">
+    <button type="button" (click)="approvaRifiuta(true)" class="btn btn-success">Approva</button>
+<button type="button" (click)="approvaRifiuta(false)" class="btn btn-danger">Rifiuta</button>
+</div>

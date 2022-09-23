@@ -11,46 +11,16 @@
     </tr>
   </thead>
   <tbody>
-      <tr>
-          <td>{{matchList[0].code_prodotto}}</td>
-          <td>{{matchList[0].code_polizza}}</td>
-          <td>{{matchList[0].status}}</td>
-          <td>{{matchList[0].email}}</td>
-          <td>{{matchList[0].name}}</td>
-          <td>{{matchList[0].surname}}</td>
+      <tr *ngFor="let item of matchList">
+          <td>{{item.cod_prodotto}}</td>
+          <td>{{item.cod_prev}}</td>
+          <td>{{item.status}}</td>
+          <td>{{item.email}}</td>
+          <td>{{item.name}}</td>
+          <td>{{item.surname}}</td>
           <td><button type="button" class="btn btn-primary btn-sm" [routerLink]="['/gestionepreventivo']"
-            [queryParams]="{codice_prodotto: matchList[0].code_prodotto, codice_polizza: matchList[0].code_polizza, status: matchList[0].status, email: matchList[0].email, name: matchList[0].name, surname: matchList[0].surname}">Apri preventivo</button></td>
+            [queryParams]="{codice_prodotto: item.cod_prodotto, cod_prev: item.cod_prev, status: item.status, email: item.email, name: item.name, surname: item.surname}">Apri preventivo</button></td>
       </tr>
-      <tr>
-        <td>{{matchList[1].code_prodotto}}</td>
-        <td>{{matchList[1].code_polizza}}</td>
-        <td>{{matchList[1].status}}</td>
-        <td>{{matchList[1].email}}</td>
-        <td>{{matchList[1].name}}</td>
-        <td>{{matchList[1].surname}}</td>
-        <td><button type="button" class="btn btn-primary btn-sm" [routerLink]="['/gestionepreventivo']"
-          [queryParams]="{codice_prodotto: matchList[1].code_prodotto, codice_polizza: matchList[1].code_polizza, status: matchList[1].status, email: matchList[1].email, name: matchList[1].name, surname: matchList[1].surname}">Apri preventivo</button></td>
-    </tr>
-    <tr>
-      <td>{{matchList[2].code_prodotto}}</td>
-      <td>{{matchList[2].code_polizza}}</td>
-      <td>{{matchList[2].status}}</td>
-      <td>{{matchList[2].email}}</td>
-      <td>{{matchList[2].name}}</td>
-      <td>{{matchList[2].surname}}</td>
-      <td><button type="button" class="btn btn-primary btn-sm" [routerLink]="['/gestionepreventivo']"
-        [queryParams]="{codice_prodotto: matchList[2].code_prodotto, codice_polizza: matchList[2].code_polizza, status: matchList[2].status, email: matchList[2].email, name: matchList[2].name, surname: matchList[2].surname}">Apri preventivo</button></td>
-  </tr>
-  <tr>
-    <td>{{matchList[3].code_prodotto}}</td>
-    <td>{{matchList[3].code_polizza}}</td>
-    <td>{{matchList[3].status}}</td>
-    <td>{{matchList[3].email}}</td>
-    <td>{{matchList[3].name}}</td>
-    <td>{{matchList[3].surname}}</td>
-    <td><button type="button" class="btn btn-primary btn-sm" [routerLink]="['/gestionepreventivo']"
-      [queryParams]="{codice_prodotto: matchList[3].code_prodotto, codice_polizza: matchList[3].code_polizza, status: matchList[3].status, email: matchList[3].email, name: matchList[3].name, surname: matchList[3].surname}">Apri preventivo</button></td>
-</tr>
   </tbody>
 </table>
 </div>
