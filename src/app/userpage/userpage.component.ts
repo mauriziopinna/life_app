@@ -33,16 +33,17 @@ export class UserpageComponent implements OnInit {
     preventivi: any
   } [] = users.users;
     
-  public userLogged = new User("", "", "","","","","","","","","","","","","","",0,0, []);
+  // public userLogged = new User("", "", "","","","","","","","","","","","","","",0,0, []);
+  public userLogged:User;
 
-
-  public preventivi:preventivo[]=users.users.preventivi;
-
+  // public preventivi:preventivo[]=users.users.preventivi;
+  public preventivi:preventivo[];
   //public userEmail: any;
 
   constructor(private route: ActivatedRoute) { 
     let userLoggedJSON = localStorage.getItem("userLogged");
     this.userLogged = JSON.parse(userLoggedJSON!);
+    console.log(this.userLogged);
     this.preventivi = this.userLogged.preventivi;
   }
 
@@ -51,7 +52,7 @@ export class UserpageComponent implements OnInit {
     console.log("stampa da user page:" +this.userLogged);
     console.log("stampa da user page:" +this.userLogged.email);
     console.log("stampa da user page:" +this.preventivi);
-    console.log("stampa da user page:" +this.preventivi[0].work_finance);
+    //console.log("stampa da user page:" +this.preventivi[0].work_finance);
   }
 
 
